@@ -1,0 +1,12 @@
+title Note submit
+
+browser->server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note right of server: server stores new note in server
+server->browser: Server returns 302 status to redirect back to exampleapp/note
+browser->server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
+note right of browser: browser displays updated notes list using data.json
